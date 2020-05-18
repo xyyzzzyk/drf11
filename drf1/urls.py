@@ -23,7 +23,7 @@ from api import views
 
 
 router = DefaultRouter()
-router.register(r'video_new',views.VideoViewSet)
+router.register(r'video_set', views.VideoViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -40,7 +40,7 @@ urlpatterns = [
         {'get': 'retrieve', 'put': 'update', 'delete': 'destroy', 'patch': 'partial_update'})),
     path('api/<str:version>/video/', views.VideoView.as_view()),
     path('api/<str:version>/video/<int:pk>/', views.VideoView.as_view()),
-    path('api/<str:version>/',include(router.urls))
+    path('api/<str:version>/', include(router.urls))
 ]
 
 

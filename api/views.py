@@ -7,7 +7,7 @@ from rest_framework.viewsets import ModelViewSet
 
 
 from api.serializers import CourseSerializer,ModuleSerializer,ModuleNewSerializer,ModuleSetSerializer,VideoSerializer
-from api import models
+from api import models,serializers
 
 
 # Create your views here.
@@ -76,12 +76,12 @@ class ModuleSetView(ModelViewSet):
 
 class VideoView(ListAPIView,RetrieveAPIView):
     queryset = models.Video.objects.all()
-    serializer_class = VideoSerializer
+    serializer_class = serializers.VideoSerializer
 
 
 class VideoViewSet(ModelViewSet):
     queryset = models.Video.objects.all()
-    serializer_class = VideoSerializer
+    serializer_class = serializers.VideoSetSerializer
 
 
 
