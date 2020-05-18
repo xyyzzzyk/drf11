@@ -16,13 +16,7 @@ class Course(models.Model):
 
 
 class Module(models.Model):
-    level_choices = (
-        (1, '初级'),
-        (2, '中级'),
-        (3, '高级'),
-    )
 
-    level= models.IntegerField(verbose_name='级别',choices=level_choices,default=1)
     name = models.CharField(verbose_name='模块名称', max_length=32)
     course = models.ForeignKey(verbose_name='课程', to=Course, on_delete=models.CASCADE)
 
